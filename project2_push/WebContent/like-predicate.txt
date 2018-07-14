@@ -1,0 +1,13 @@
+like predicate in file SearchResultServlet, Example like this one
+select m.id, m.title, m.year, m.director, r.rating , GROUP_CONCAT(distinct g.name) as genres_list, GROUP_CONCAT(distinct s.name) as stars_name
+from (select * from movies where  title like '%young%' or  title like '%man%' and year = '2001') as m
+inner join
+stars_in_movies as sim on sim.movieId = m.id 
+inner join stars as s on s.Id = sim.starId 
+inner join
+ratings as r on m.id = r.movieId
+inner join
+genres_in_movies as gim on r.movieId = gim.movieId
+inner join
+genres as g on g.id = gim.genreId
+group by m.id, r.rating limit 20 offset 0

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shopping Cart</title>
+</head>
+<body>
+<h3 id="moviepage_info"></h3>
+<div id="screen-selector">
+<table  border="1" id=moviepage_table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+    </tr>
+    </thead>    
+    <thead>
+    <tbody id=shopping_table_body></tbody>
+    </thead>
+</table>
+</div>
+<div class="container" align="right">                
+ <ul id="cart_form" class="pagination"> 
+	<li><a href="checkout.html">checkout</a></li>
+</ul>
+</div>
+<style>
+body {
+   background-image: url("backgound.jpg");
+   background-repeat:no-repeat ;
+   background-size:100% 100%; 
+   background-attachment: fixed;     
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="shopping_cart.js"></script>
+</body>
+</html>

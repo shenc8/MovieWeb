@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<head>
+    <meta charset="UTF-8">
+    <title font-family=Roboto sans-serif>Login to Fablix</title>
+</head>
+<body>
+<h2 align = "center">Login to Fablix</h2>
+<div class="login_page">
+	<div class="form">
+		<form id="login_form" method="post" action="#">
+		    <label><b>Username</b></label>
+		    <input type="text" placeholder="Enter Username" name="username">
+		    <br>
+		    <label><b>Password</b></label>
+		    <input type="password" placeholder="Enter Password" name="password">
+		    <!-- <br>
+		    <div id =captcha class="g-recaptcha" data-sitekey="6LcKrVcUAAAAANw3foj9fAmh8q9HeCEh03h9K8W8"></div>
+		    <br>-->
+		    <input id="submit" type="submit" value="Login">
+		    <br>
+		    <div id="login_error_message"></div>
+		</form>
+	</div>
+</div>
+<style>
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: Montserrat, sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+#submit {
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #0080c0;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+#submit:hover, #submit:active,#submit:focus {
+  background: #0080ff;
+}
+body {
+   background-image: url("background.gif");
+   background-repeat:no-repeat ;
+   background-size:100% 100%; 
+   background-attachment: fixed;     
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./login.js"></script>
+</body>
+</html>

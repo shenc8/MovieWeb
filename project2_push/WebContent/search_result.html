@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MoviePage</title>
+</head>
+<body>
+<h1 align="center">MovieList</h1>
+<table id=search_table class="table table-striped">
+    <!-- Create a table header -->
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th onclick=sorting(1)>title</th>
+        <th>year</th>
+        <th>director</th>
+        <th onclick=sorting(4)>rating</th>
+        <th>genres_list</th>
+        <th>stars_name</th>
+    </tr>
+    </thead>
+    <!-- Table body is left empty here, will be populated with the data retrieved with index.js -->
+    <!-- Again, id "star_table_body" is useful for jQuery to find this html element -->
+    <tbody id=search_table_body></tbody>
+</table>
+<div class="container" align = "center" >                
+  <ul id="prag" class="pagination"text-align=center> 
+  </ul>
+</div>
+<div class="container" align="right">                
+  <ul id="cart_form" class="pagination"> 
+  	<li><a href="shopping_cart.html">shopping cart</a></li>
+  </ul>
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="./search_result.js"></script>
+<script>
+function sorting(column){
+	var tablerows = document.getElementById("search_table").rows;
+	var list = [];
+	var before = [];
+	for (var i =1;i<tablerows.length;i++)
+	{
+		list.push(tablerows[i].cells[column].innerHTML);
+		before.push(tablerows[i].cells[column].innerHTML);
+	}
+	var after = list.sort();
+	var need_reverse = true;
+	for (var m in after)
+	{	
+		if (String(after[m])!=String(before[m]))
+		{ 	
+			need_reverse=false;
+			break;
+		}
+	}
+	if (need_reverse==true)
+	{
+		after = list.reverse();
+	}
+	console.log(after);
+	var new_thing =[];
+	for (var i in after)
+	{
+		for (var j =1; j<tablerows.length; j++)
+		{
+			if (after[i]===tablerows[j].cells[column].innerHTML){
+				if ($.inArray(tablerows[j].innerHTML,new_thing) == -1)
+					{new_thing.push(tablerows[j].innerHTML);}
+			}
+	}
+	}
+	for (var i =1;i<tablerows.length;i++)
+	{
+		tablerows[i].innerHTML = new_thing[i-1];
+	}
+}
+
+</script>
+<style>
+body {
+   background-image: url("backgound.jpg");
+   background-repeat:no-repeat ;
+   background-size:100% 100%; 
+   background-attachment: fixed;     
+}
+</style>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Genres</title>
+</head>
+<body>
+<h1 align=center>Genres</h1>
+
+<!-- Id "star_table" is useful for jQuery to find the html element with id, class here is mapping to Bootstrap defined class CSS -->
+<div class="genres_page">
+<div class=form>
+<table id=genres_table class="table table-striped" align=center>
+    <!-- Create a table header -->
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <!-- Table body is left empty here, will be populated with the data retrieved with index.js -->
+    <!-- Again, id "star_table_body" is useful for jQuery to find this html element -->
+    <tbody id=genres_table_body align=center></tbody>
+</table>
+</div>
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Load jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<div class="container" align="right">                
+  <ul id="cart_form" class="pagination"> 
+  	<li><a href="shopping_cart.html">shopping cart</a></li>
+  </ul>
+</div>
+<script src="browse_genres.js"></script>
+<style>
+#genres_page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+body {
+   background-image: url("background.gif");
+   background-repeat:no-repeat ;
+   background-size:100% 100%; 
+   background-attachment: fixed;     
+}
+</style>
+</body>
+
+
+</html>
